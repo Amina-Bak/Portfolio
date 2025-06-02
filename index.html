@@ -93,13 +93,14 @@
             background: var(--neon);
         }
         
-        .project-grid {
+        .project-grid, .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
+            margin-top: 2rem;
         }
         
-        .project-card {
+        .project-card, .skill-card {
             background: rgba(20,20,30,0.6);
             border: 1px solid var(--primary);
             border-radius: 8px;
@@ -107,6 +108,30 @@
             transition: all 0.4s;
             position: relative;
             overflow: hidden;
+        }
+        
+        .skill-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .skill-card li {
+            margin: 0.8rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .skill-card li::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            color: var(--neon);
+        }
+        
+        .project-card:hover, .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,240,255,0.3);
+            border-color: var(--neon);
         }
         
         .contact-info {
@@ -137,7 +162,7 @@
         
         @media (max-width: 768px) {
             header { padding: 3rem 1rem; }
-            .project-grid { grid-template-columns: 1fr; }
+            .project-grid, .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -152,7 +177,7 @@
     </header>
 
     <main>
-        <section>
+        <section id="projets">
             <h2>> MES_PROJETS</h2>
             <div class="project-grid">
                 <div class="project-card">
@@ -171,6 +196,41 @@
                         <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">Illustrator</span>
                         <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Photoshop</span>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="competences">
+            <h2>> MES_COMPÉTENCES</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>> DÉVELOPPEMENT_WEB</h3>
+                    <ul>
+                        <li>HTML5/CSS3</li>
+                        <li>JavaScript</li>
+                        <li>Git/GitHub</li>
+                        <li>Responsive Design</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>> FABRICATION_DIGITALE</h3>
+                    <ul>
+                        <li>Impression 3D (FDM, résine)</li>
+                        <li>Découpe laser (bois, acrylique)</li>
+                        <li>Modélisation 3D (Fusion 360)</li>
+                        <li>Prototypage rapide</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>> DESIGN</h3>
+                    <ul>
+                        <li>UI/UX Design</li>
+                        <li>Graphisme Print</li>
+                        <li>Identité visuelle</li>
+                        <li>Montage vidéo</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -216,6 +276,23 @@
                     iterations += 0.3;
                 }, 30);
             });
+        });
+
+        // Animation au scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.project-card, .skill-card').forEach(card => {
+            card.style.opacity = 0;
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
+            observer.observe(card);
         });
     </script>
 </body>
