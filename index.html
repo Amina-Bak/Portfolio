@@ -24,10 +24,9 @@
             margin: 0;
             min-height: 100vh;
             overflow-x: hidden;
-            padding-top: 60px; /* Espace pour la nav fixe */
+            padding-top: 60px;
         }
         
-        /* ▼▼▼ NOUVEAU : Barre de navigation ▼▼▼ */
         nav {
             position: fixed;
             top: 0;
@@ -80,7 +79,6 @@
         nav a:hover::after {
             width: 100%;
         }
-        /* ▲▲▲ FIN DE LA NAV ▲▲▲ */
         
         header {
             background: rgba(10,10,18,0.9);
@@ -149,7 +147,6 @@
             background: var(--neon);
         }
         
-        /* ▼▼▼ PROJETS AMÉLIORÉS ▼▼▼ */
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -194,7 +191,6 @@
         .project-link:hover {
             text-shadow: var(--glow);
         }
-        /* ▲▲▲ FIN PROJETS ▲▲▲ */
         
         .skills-grid {
             display: grid;
@@ -237,7 +233,6 @@
             border-color: var(--neon);
         }
         
-        /* ▼▼▼ NOUVELLE SECTION À PROPOS ▼▼▼ */
         .about-content {
             display: flex;
             align-items: center;
@@ -273,7 +268,6 @@
             text-shadow: var(--glow);
             transform: translateY(-3px);
         }
-        /* ▲▲▲ FIN À PROPOS ▲▲▲ */
         
         .contact-info {
             background: rgba(20,20,30,0.6);
@@ -296,7 +290,6 @@
             text-shadow: var(--glow);
         }
         
-        /* ▼▼▼ NOUVEAU FOOTER ▼▼▼ */
         footer {
             text-align: center;
             padding: 2rem;
@@ -311,7 +304,6 @@
             margin: 0;
             color: var(--neon);
         }
-        /* ▲▲▲ FIN FOOTER ▲▲▲ */
         
         @keyframes scanline {
             0% { transform: translateX(-100%); }
@@ -352,7 +344,6 @@
     </style>
 </head>
 <body>
-    <!-- ▼▼▼ NAVIGATION ▼▼▼ -->
     <nav>
         <ul>
             <li><a href="#about">À_Propos</a></li>
@@ -372,7 +363,6 @@
     </header>
 
     <main>
-        <!-- ▼▼▼ SECTION À PROPOS ▼▼▼ -->
         <section id="about">
             <h2>> À_PROPOS</h2>
             <div class="about-content">
@@ -389,7 +379,6 @@
             </div>
         </section>
 
-        <!-- ▼▼▼ SECTION PROJETS ▼▼▼ -->
         <section id="projets">
             <h2>> MES_PROJETS</h2>
             <div class="project-grid">
@@ -410,12 +399,9 @@
                         <a href="#" class="project-link">Voir_le_projet →</a>
                     </div>
                 </div>
-                
-                <!-- Ajoutez d'autres projets ici -->
             </div>
         </section>
 
-        <!-- ▼▼▼ SECTION COMPÉTENCES ▼▼▼ -->
         <section id="competences">
             <h2>> MES_COMPÉTENCES</h2>
             <div class="skills-grid">
@@ -445,23 +431,20 @@
                         <li>UI/UX Design (Figma)</li>
                         <li>Graphisme Print</li>
                         <li>Identité visuelle</li>
-                        <li>Montage vidéo (Premiere Pro)</li>
+                        <!-- Montage vidéo supprimé -->
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- ▼▼▼ SECTION CONTACT ▼▼▼ -->
         <section id="contact">
             <h2>> CONTACT</h2>
             <div class="contact-info">
                 <h3>Disponible pour des opportunités :</h3>
-                <a href="mailto:contact@exemple.com">
-                    <i class="fas fa-envelope"></i> contact@exemple.com
+                <a href="mailto:aminabakacheva@gmail.com">
+                    <i class="fas fa-envelope"></i> aminabakacheva@gmail.com
                 </a>
-                <a href="tel:+33612345678">
-                    <i class="fas fa-phone"></i> +33 6 12 34 56 78
-                </a>
+                <!-- Numéro de téléphone supprimé -->
                 <p style="margin-top: 2rem;">
                     Actuellement en formation <strong>Explore Ton Talent</strong> à Bordeaux,<br>
                     je suis ouverte aux collaborations et conseils professionnels.
@@ -470,14 +453,13 @@
         </section>
     </main>
 
-    <!-- ▼▼▼ FOOTER ▼▼▼ -->
     <footer>
         <p>© 2024 AB_DEV - Portfolio étudiant | ETT Bordeaux</p>
     </footer>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        // ▼▼▼ EFFET HACKER SUR LES TITRES (conservé) ▼▼▼
+        // Effet hacker sur les titres
         document.querySelectorAll('h1, h2, h3').forEach(title => {
             const originalText = title.innerText;
             title.dataset.text = originalText;
@@ -503,7 +485,7 @@
             });
         });
 
-        // ▼▼▼ ANIMATION AU SCROLL (conservé) ▼▼▼
+        // Animation au scroll
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
