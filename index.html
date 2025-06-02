@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AB_DEV - Portfolio Étudiante</title>
+    <title>AB_DEV - Portfolio Étudiante ETT</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,7 +24,63 @@
             margin: 0;
             min-height: 100vh;
             overflow-x: hidden;
+            padding-top: 60px; /* Espace pour la nav fixe */
         }
+        
+        /* ▼▼▼ NOUVEAU : Barre de navigation ▼▼▼ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10,10,30,0.9);
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary);
+            backdrop-filter: blur(5px);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 1rem;
+            margin: 0;
+        }
+        
+        nav li {
+            list-style: none;
+            margin: 0 1.5rem;
+        }
+        
+        nav a {
+            color: var(--neon);
+            text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        nav a:hover {
+            text-shadow: var(--glow);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--neon);
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        /* ▲▲▲ FIN DE LA NAV ▲▲▲ */
         
         header {
             background: rgba(10,10,18,0.9);
@@ -93,14 +149,61 @@
             background: var(--neon);
         }
         
-        .project-grid, .skills-grid {
+        /* ▼▼▼ PROJETS AMÉLIORÉS ▼▼▼ */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .project-card {
+            background: rgba(20,20,30,0.6);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid var(--primary);
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-link {
+            color: var(--neon);
+            text-decoration: none;
+            margin-top: auto;
+            align-self: flex-start;
+            font-family: 'Orbitron';
+        }
+        
+        .project-link:hover {
+            text-shadow: var(--glow);
+        }
+        /* ▲▲▲ FIN PROJETS ▲▲▲ */
+        
+        .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 2rem;
         }
         
-        .project-card, .skill-card {
+        .skill-card {
             background: rgba(20,20,30,0.6);
             border: 1px solid var(--primary);
             border-radius: 8px;
@@ -134,6 +237,44 @@
             border-color: var(--neon);
         }
         
+        /* ▼▼▼ NOUVELLE SECTION À PROPOS ▼▼▼ */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: rgba(20,20,30,0.6);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 2rem;
+        }
+        
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--neon);
+            box-shadow: var(--glow);
+        }
+        
+        .social-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-links a {
+            color: var(--neon);
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            text-shadow: var(--glow);
+            transform: translateY(-3px);
+        }
+        /* ▲▲▲ FIN À PROPOS ▲▲▲ */
+        
         .contact-info {
             background: rgba(20,20,30,0.6);
             border: 1px solid var(--primary);
@@ -155,51 +296,126 @@
             text-shadow: var(--glow);
         }
         
+        /* ▼▼▼ NOUVEAU FOOTER ▼▼▼ */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(10,10,30,0.9);
+            margin-top: 4rem;
+            border-top: 1px solid var(--primary);
+            font-family: 'Orbitron';
+            font-size: 0.9rem;
+        }
+        
+        footer p {
+            margin: 0;
+            color: var(--neon);
+        }
+        /* ▲▲▲ FIN FOOTER ▲▲▲ */
+        
         @keyframes scanline {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(100%); }
         }
         
         @media (max-width: 768px) {
-            header { padding: 3rem 1rem; }
-            .project-grid, .skills-grid { grid-template-columns: 1fr; }
+            body {
+                padding-top: 50px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                padding: 0.5rem;
+            }
+            
+            nav li {
+                margin: 0 0.5rem;
+            }
+            
+            header { 
+                padding: 3rem 1rem; 
+            }
+            
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .project-grid, .skills-grid { 
+                grid-template-columns: 1fr; 
+            }
+            
+            .project-card {
+                min-height: 350px;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- ▼▼▼ NAVIGATION ▼▼▼ -->
+    <nav>
+        <ul>
+            <li><a href="#about">À_Propos</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
     <header>
         <div class="logo">
             <span>></span> AB_DEV
         </div>
         <p class="subtitle">
-            ÉTUDIANTE EN DÉVELOPPEMENT WEB | DESIGN NUMÉRIQUE
+            ÉTUDIANTE EN DÉVELOPPEMENT WEB | DESIGN NUMÉRIQUE | ETT BORDEAUX
         </p>
     </header>
 
     <main>
-        <section id="projets">
-            <h2>> MES_PROJETS</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>> PROJET_WEB</h3>
-                    <p>Site vitrine avec intégration API</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">HTML5/CSS3</span>
-                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">JavaScript</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h3>> DESIGN_PRINT</h3>
-                    <p>Affiche événementielle tech</p>
-                    <div style="margin-top: 1rem;">
-                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">Illustrator</span>
-                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Photoshop</span>
+        <!-- ▼▼▼ SECTION À PROPOS ▼▼▼ -->
+        <section id="about">
+            <h2>> À_PROPOS</h2>
+            <div class="about-content">
+                <img src="votre-photo.jpg" alt="Photo profil" class="profile-pic">
+                <div>
+                    <p>Étudiante en développement web et design numérique à l'école ETT Bordeaux, je me spécialise dans la création d'interfaces innovantes combinant esthétique cyberpunk et fonctionnalité.</p>
+                    <p>Passionnée par les nouvelles technologies, l'impression 3D et le design interactif, j'aime repousser les limites créatives dans mes projets.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-behance"></i></a>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ▼▼▼ SECTION PROJETS ▼▼▼ -->
+        <section id="projets">
+            <h2>> MES_PROJETS</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('projet-web.jpg');"></div>
+                    <div class="project-content">
+                        <h3>> PROJET_WEB</h3>
+                        <p>Site vitrine pour un client fictif avec intégration d'API REST et design responsive. Développé avec HTML5, CSS3 et JavaScript.</p>
+                        <a href="#" class="project-link">Voir_le_projet →</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-image" style="background-image: url('projet-design.jpg');"></div>
+                    <div class="project-content">
+                        <h3>> DESIGN_PRINT</h3>
+                        <p>Affiche événementielle pour un festival de technologie. Création de l'identité visuelle et déclinaisons print.</p>
+                        <a href="#" class="project-link">Voir_le_projet →</a>
+                    </div>
+                </div>
+                
+                <!-- Ajoutez d'autres projets ici -->
+            </div>
+        </section>
+
+        <!-- ▼▼▼ SECTION COMPÉTENCES ▼▼▼ -->
         <section id="competences">
             <h2>> MES_COMPÉTENCES</h2>
             <div class="skills-grid">
@@ -207,7 +423,7 @@
                     <h3>> DÉVELOPPEMENT_WEB</h3>
                     <ul>
                         <li>HTML5/CSS3</li>
-                        <li>JavaScript</li>
+                        <li>JavaScript (ES6+)</li>
                         <li>Git/GitHub</li>
                         <li>Responsive Design</li>
                     </ul>
@@ -226,33 +442,42 @@
                 <div class="skill-card">
                     <h3>> DESIGN</h3>
                     <ul>
-                        <li>UI/UX Design</li>
+                        <li>UI/UX Design (Figma)</li>
                         <li>Graphisme Print</li>
                         <li>Identité visuelle</li>
-                        <li>Montage vidéo</li>
+                        <li>Montage vidéo (Premiere Pro)</li>
                     </ul>
                 </div>
             </div>
         </section>
 
+        <!-- ▼▼▼ SECTION CONTACT ▼▼▼ -->
         <section id="contact">
             <h2>> CONTACT</h2>
             <div class="contact-info">
                 <h3>Disponible pour des opportunités :</h3>
-                <a href="mailto:aminabakacheva@gmail.com">
-                    <i class="fas fa-envelope"></i> aminabakacheva@gmail.com
+                <a href="mailto:contact@exemple.com">
+                    <i class="fas fa-envelope"></i> contact@exemple.com
+                </a>
+                <a href="tel:+33612345678">
+                    <i class="fas fa-phone"></i> +33 6 12 34 56 78
                 </a>
                 <p style="margin-top: 2rem;">
-                    Actuellement en formation <strong>Explore Ton Talent</strong>,<br>
+                    Actuellement en formation <strong>Explore Ton Talent</strong> à Bordeaux,<br>
                     je suis ouverte aux collaborations et conseils professionnels.
                 </p>
             </div>
         </section>
     </main>
 
+    <!-- ▼▼▼ FOOTER ▼▼▼ -->
+    <footer>
+        <p>© 2024 AB_DEV - Portfolio étudiant | ETT Bordeaux</p>
+    </footer>
+
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-        // Effet de texte "hacker"
+        // ▼▼▼ EFFET HACKER SUR LES TITRES (conservé) ▼▼▼
         document.querySelectorAll('h1, h2, h3').forEach(title => {
             const originalText = title.innerText;
             title.dataset.text = originalText;
@@ -278,7 +503,7 @@
             });
         });
 
-        // Animation au scroll
+        // ▼▼▼ ANIMATION AU SCROLL (conservé) ▼▼▼
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
@@ -288,7 +513,7 @@
             });
         }, { threshold: 0.1 });
 
-        document.querySelectorAll('.project-card, .skill-card').forEach(card => {
+        document.querySelectorAll('.project-card, .skill-card, .about-content').forEach(card => {
             card.style.opacity = 0;
             card.style.transform = 'translateY(20px)';
             card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
