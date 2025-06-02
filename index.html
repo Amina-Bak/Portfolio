@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amina Bakacheva - Cyber Portfolio</title>
+    <title>AB_DEV - Portfolio Étudiante</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -14,7 +14,6 @@
             --glow: 0 0 10px rgba(0, 240, 255, 0.7);
         }
         
-        /* Effet circuit imprimé en arrière-plan */
         body {
             font-family: 'Rajdhani', sans-serif;
             background: 
@@ -27,15 +26,6 @@
             overflow-x: hidden;
         }
         
-        /* Typographie cyberpunk */
-        h1, h2, h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--neon);
-            text-shadow: var(--glow);
-            letter-spacing: 2px;
-        }
-        
-        /* Header avec effet de balayage */
         header {
             background: rgba(10,10,18,0.9);
             padding: 5rem 2rem;
@@ -56,24 +46,57 @@
             animation: scanline 4s linear infinite;
         }
         
-        @keyframes scanline {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            color: var(--neon);
+            text-shadow: var(--glow);
+            margin-bottom: 1rem;
         }
         
-        /* Contenu principal */
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .subtitle {
+            color: var(--neon);
+            font-family: 'Rajdhani', sans-serif;
+            letter-spacing: 1px;
+            font-size: 1.2rem;
+        }
+        
         main {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 2rem;
         }
         
-        /* Grille de projets futuriste */
+        section {
+            margin: 4rem 0;
+        }
+        
+        h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--neon);
+            text-shadow: var(--glow);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 2px;
+            background: var(--neon);
+        }
+        
         .project-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
         }
         
         .project-card {
@@ -86,49 +109,32 @@
             overflow: hidden;
         }
         
-        .project-card::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(
-                to bottom right,
-                transparent, transparent,
-                rgba(106,13,173,0.1),
-                transparent, transparent
-            );
-            transform: rotate(30deg);
-            transition: all 0.6s;
+        .contact-info {
+            background: rgba(20,20,30,0.6);
+            border: 1px solid var(--primary);
+            border-radius: 8px;
+            padding: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,240,255,0.3);
-            border-color: var(--neon);
+        .contact-info a {
+            color: var(--neon);
+            text-decoration: none;
+            display: block;
+            margin: 1rem 0;
+            font-family: 'Orbitron';
         }
         
-        .project-card:hover::before {
-            animation: shine 1.5s;
+        .contact-info a:hover {
+            text-shadow: var(--glow);
         }
         
-        @keyframes shine {
-            100% { left: 150%; }
+        @keyframes scanline {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
         }
         
-        /* Effets de terminal */
-        .typing-effect {
-            border-right: 2px solid var(--neon);
-            animation: blink-caret 0.75s step-end infinite;
-        }
-        
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: var(--neon); }
-        }
-        
-        /* Responsive */
         @media (max-width: 768px) {
             header { padding: 3rem 1rem; }
             .project-grid { grid-template-columns: 1fr; }
@@ -137,48 +143,54 @@
 </head>
 <body>
     <header>
-        <h1 class="typing-effect">> AMINA_BAKACHEVA</h1>
-        <p style="color: var(--neon); font-family: 'Orbitron'; margin-top: 1rem;">
-            DEVELOPPEUSE_ROBOTIQUE | DESIGNER_INTERACTIF
+        <div class="logo">
+            <span>></span> AB_DEV
+        </div>
+        <p class="subtitle">
+            ÉTUDIANTE EN DÉVELOPPEMENT WEB | DESIGN NUMÉRIQUE
         </p>
     </header>
 
     <main>
-        <h2>> MES_PROJETS</h2>
-        
-        <div class="project-grid">
-            <!-- Projet 1 -->
-            <div class="project-card">
-                <h3>> PROJET_WEB</h3>
-                <p>Site vitrine avec intégration API avancée</p>
-                <div style="margin-top: 1rem;">
-                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">HTML5/CSS3</span>
-                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">JavaScript</span>
+        <section>
+            <h2>> MES_PROJETS</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>> PROJET_WEB</h3>
+                    <p>Site vitrine avec intégration API</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">HTML5/CSS3</span>
+                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">JavaScript</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>> DESIGN_PRINT</h3>
+                    <p>Affiche événementielle tech</p>
+                    <div style="margin-top: 1rem;">
+                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">Illustrator</span>
+                        <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Photoshop</span>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Projet 2 -->
-            <div class="project-card">
-                <h3>> DESIGN_PRINT</h3>
-                <p>Affiche événementielle pour festival tech</p>
-                <div style="margin-top: 1rem;">
-                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">Illustrator</span>
-                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">Photoshop</span>
-                </div>
+        </section>
+
+        <section id="contact">
+            <h2>> CONTACT</h2>
+            <div class="contact-info">
+                <h3>Disponible pour des opportunités :</h3>
+                <a href="mailto:aminabakacheva@gmail.com">
+                    <i class="fas fa-envelope"></i> aminabakacheva@gmail.com
+                </a>
+                <p style="margin-top: 2rem;">
+                    Actuellement en formation <strong>Explore Ton Talent</strong>,<br>
+                    je suis ouverte aux collaborations et conseils professionnels.
+                </p>
             </div>
-            
-            <!-- Projet 3 -->
-            <div class="project-card">
-                <h3>> APP_MOBILE</h3>
-                <p>Interface de contrôle robotique</p>
-                <div style="margin-top: 1rem;">
-                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem;">Figma</span>
-                    <span style="display: inline-block; background: rgba(0,240,255,0.1); border: 1px solid var(--neon); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem;">React Native</span>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
         // Effet de texte "hacker"
         document.querySelectorAll('h1, h2, h3').forEach(title => {
@@ -204,23 +216,6 @@
                     iterations += 0.3;
                 }, 30);
             });
-        });
-
-        // Animation au scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
-            observer.observe(card);
         });
     </script>
 </body>
