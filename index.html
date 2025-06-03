@@ -1,510 +1,224 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aβX://404.dev - Portfolio Étudiante ETT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio de Amina Bakacheva, étudiante en développement web à Bordeaux.">
+    <title>Portfolio d'Amina</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
     <style>
-        :root {
-            --primary: #6a0dad;
-            --secondary: #000;
-            --neon: #00f0ff;
-            --bg: #0a0a12;
-            --glow: 0 0 10px rgba(0, 240, 255, 0.7);
-        }
-        
         body {
-            font-family: 'Rajdhani', sans-serif;
-            background: 
-                linear-gradient(rgba(10,10,18,0.9), rgba(10,10,18,0.9)),
-                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%236a0dad' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
-            color: #fff;
-            line-height: 1.6;
             margin: 0;
-            min-height: 100vh;
+            font-family: 'Rajdhani', sans-serif;
+            background-color: #0f0f0f;
+            color: #00ffea;
             overflow-x: hidden;
-            padding-top: 60px;
         }
-        
+
+        header {
+            background-color: #1a1a1a;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #00ffea;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3em;
+            margin: 0;
+        }
+
         nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10,10,30,0.9);
-            z-index: 1000;
-            border-bottom: 1px solid var(--primary);
-            backdrop-filter: blur(5px);
-        }
-        
-        nav ul {
             display: flex;
             justify-content: center;
-            padding: 1rem;
-            margin: 0;
+            gap: 20px;
+            margin-top: 10px;
         }
-        
-        nav li {
-            list-style: none;
-            margin: 0 1.5rem;
-        }
-        
+
         nav a {
-            color: var(--neon);
+            color: #00ffea;
             text-decoration: none;
-            font-family: 'Orbitron', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-            transition: all 0.3s;
-            padding: 0.5rem 0;
+            font-weight: bold;
             position: relative;
         }
-        
-        nav a:hover {
-            text-shadow: var(--glow);
-        }
-        
+
         nav a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
+            width: 100%;
             height: 2px;
-            background: var(--neon);
-            transition: width 0.3s;
+            background-color: #00ffea;
+            bottom: -4px;
+            left: 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
-        
+
         nav a:hover::after {
-            width: 100%;
+            transform: scaleX(1);
         }
-        
-        header {
-            background: rgba(10,10,18,0.9);
-            padding: 5rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid var(--primary);
-        }
-        
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--neon), transparent);
-            animation: scanline 4s linear infinite;
-        }
-        
-        .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.8rem;
-            color: var(--neon);
-            text-shadow: var(--glow);
-            margin-bottom: 1rem;
-            letter-spacing: 2px;
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        .subtitle {
-            color: var(--neon);
-            font-family: 'Rajdhani', sans-serif;
-            letter-spacing: 1px;
-            font-size: 1.2rem;
-        }
-        
+
         main {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
         }
-        
+
         section {
-            margin: 4rem 0;
+            margin-bottom: 60px;
         }
-        
+
         h2 {
             font-family: 'Orbitron', sans-serif;
-            color: var(--neon);
-            text-shadow: var(--glow);
-            margin-bottom: 2rem;
+            font-size: 2em;
+            border-left: 4px solid #00ffea;
+            padding-left: 10px;
+            margin-bottom: 20px;
             position: relative;
         }
-        
+
         h2::after {
-            content: "";
+            content: '';
             position: absolute;
-            bottom: -10px;
+            bottom: -5px;
             left: 0;
-            width: 100px;
+            width: 100%;
             height: 2px;
-            background: var(--neon);
+            background-color: #00ffea;
+            animation: pulse 2s ease-in-out infinite;
         }
-        
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
         }
-        
-        .project-card {
-            background: rgba(20,20,30,0.6);
-            border: 1px solid var(--primary);
-            border-radius: 8px;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-            min-height: 400px;
-            display: flex;
-            flex-direction: column;
+
+        .project-card, .skill-card, .timeline-item {
+            background-color: #1a1a1a;
+            padding: 20px;
+            border: 1px solid #00ffea;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            transition: transform 0.3s;
         }
-        
-        .project-image {
-            height: 200px;
-            background-size: cover;
-            background-position: center;
-            border-bottom: 1px solid var(--primary);
+
+        .project-card:hover, .skill-card:hover, .timeline-item:hover {
+            transform: scale(1.05);
         }
-        
-        .project-content {
-            padding: 1.5rem;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .project-link {
-            color: var(--neon);
-            text-decoration: none;
-            margin-top: auto;
-            align-self: flex-start;
-            font-family: 'Orbitron';
-        }
-        
-        .project-link:hover {
-            text-shadow: var(--glow);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .skill-card {
-            background: rgba(20,20,30,0.6);
-            border: 1px solid var(--primary);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: all 0.4s;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .skill-card ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        
-        .skill-card li {
-            margin: 0.8rem 0;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .skill-card li::before {
-            content: ">";
-            position: absolute;
-            left: 0;
-            color: var(--neon);
-        }
-        
-        .project-card:hover, .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,240,255,0.3);
-            border-color: var(--neon);
-        }
-        
-        .about-content {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-            background: rgba(20,20,30,0.6);
-            border: 1px solid var(--primary);
-            border-radius: 8px;
-            padding: 2rem;
-        }
-        
-        .profile-pic {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--neon);
-            box-shadow: var(--glow);
-        }
-        
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .social-links a {
-            color: var(--neon);
-            font-size: 1.5rem;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            text-shadow: var(--glow);
-            transform: translateY(-3px);
-        }
-        
-        .contact-info {
-            background: rgba(20,20,30,0.6);
-            border: 1px solid var(--primary);
-            border-radius: 8px;
-            padding: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .contact-info a {
-            color: var(--neon);
-            text-decoration: none;
-            display: block;
-            margin: 1rem 0;
-            font-family: 'Orbitron';
-        }
-        
-        .contact-info a:hover {
-            text-shadow: var(--glow);
-        }
-        
+
         footer {
+            background-color: #1a1a1a;
             text-align: center;
-            padding: 2rem;
-            background: rgba(10,10,30,0.9);
-            margin-top: 4rem;
-            border-top: 1px solid var(--primary);
-            font-family: 'Orbitron';
-            font-size: 0.9rem;
+            padding: 20px;
+            border-top: 2px solid #00ffea;
         }
-        
-        footer p {
-            margin: 0;
-            color: var(--neon);
+
+        .social-icons a {
+            color: #00ffea;
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: color 0.3s;
         }
-        
-        @keyframes scanline {
-            0% { transform: translateX(-100%); }
-            100% { transform: translateX(100%); }
+
+        .social-icons a:hover {
+            color: #ff00ff;
         }
-        
-        @media (max-width: 768px) {
-            body {
-                padding-top: 50px;
+
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 255, 234, 0.05),
+                rgba(0, 255, 234, 0.05) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+            z-index: 999;
+        }
+
+        .timeline span {
+            font-weight: bold;
+            color: #ff00ff;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
             }
-            
-            nav ul {
-                flex-wrap: wrap;
-                padding: 0.5rem;
-            }
-            
-            nav li {
-                margin: 0 0.5rem;
-            }
-            
-            header { 
-                padding: 3rem 1rem; 
-            }
-            
-            .logo {
-                font-size: 2.2rem;
-            }
-            
-            .about-content {
+            nav {
                 flex-direction: column;
-                text-align: center;
-            }
-            
-            .project-grid, .skills-grid { 
-                grid-template-columns: 1fr; 
-            }
-            
-            .project-card {
-                min-height: 350px;
+                gap: 10px;
             }
         }
     </style>
 </head>
+
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">À_Propos</a></li>
-            <li><a href="#projets">Projets</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
-
+    <div class="scanline"></div>
     <header>
-        <div class="logo">
-            aβX://<span style="color: var(--neon);">404.dev</span>
-        </div>
-        <p class="subtitle">
-            ÉTUDIANTE EN DÉVELOPPEMENT WEB | DESIGN NUMÉRIQUE | ETT BORDEAUX
-        </p>
+        <h1>Portfolio d'Amina</h1>
+        <nav>
+            <a href="#projets">Projets</a>
+            <a href="#competences">Compétences</a>
+            <a href="#timeline">Parcours</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-
     <main>
-        <section id="about">
-            <h2>> À_PROPOS</h2>
-            <div class="about-content">
-                <img src="votre-photo.jpg" alt="Photo de Amina Bakacheva" class="profile-pic">
-                <div>
-                    <h3 style="color: var(--neon); font-family: 'Orbitron'; margin-top: 0;">Amina Bakacheva</h3>
-                    <p>Étudiante en développement web et design numérique à l'école ETT Bordeaux, je me spécialise dans la création d'interfaces innovantes combinant esthétique cyberpunk et fonctionnalité.</p>
-                    <p>Passionnée par les nouvelles technologies, l'impression 3D et le design interactif, j'aime repousser les limites créatives dans mes projets.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fab fa-behance"></i></a>
-                    </div>
-                </div>
-            </div>
+        <section id="presentation">
+            <h2>> PRÉSENTATION</h2>
+            <p>Je suis Amina Bakacheva, étudiante en développement web et design numérique à ETT Bordeaux. Passionnée par le cyberpunk, j’aime créer des interfaces futuristes qui sortent de l’ordinaire.</p>
+            <img src="amina.jpg" alt="Portrait de Amina Bakacheva, développeuse web" style="max-width:100%; border: 2px solid #00ffea; border-radius: 10px;">
         </section>
 
         <section id="projets">
-            <h2>> MES_PROJETS</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('projet-web.jpg');"></div>
-                    <div class="project-content">
-                        <h3>> PROJET_WEB</h3>
-                        <p>Site vitrine pour un client fictif avec intégration d'API REST et design responsive. Développé avec HTML5, CSS3 et JavaScript.</p>
-                        <a href="#" class="project-link">Voir_le_projet →</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image" style="background-image: url('projet-design.jpg');"></div>
-                    <div class="project-content">
-                        <h3>> DESIGN_PRINT</h3>
-                        <p>Affiche événementielle pour un festival de technologie. Création de l'identité visuelle et déclinaisons print.</p>
-                        <a href="#" class="project-link">Voir_le_projet →</a>
-                    </div>
-                </div>
+            <h2>> PROJETS</h2>
+            <div class="project-card">
+                <h3>Nom du projet</h3>
+                <p>Description du projet avec les technologies utilisées.</p>
             </div>
         </section>
 
         <section id="competences">
-            <h2>> MES_COMPÉTENCES</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>> DÉVELOPPEMENT_WEB</h3>
-                    <ul>
-                        <li>HTML5/CSS3</li>
-                        <li>JavaScript (ES6+)</li>
-                        <li>Git/GitHub</li>
-                        <li>Responsive Design</li>
-                    </ul>
-                </div>
+            <h2>> COMPÉTENCES</h2>
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+        </section>
 
-                <div class="skill-card">
-                    <h3>> FABRICATION_DIGITALE</h3>
-                    <ul>
-                        <li>Impression 3D (FDM, résine)</li>
-                        <li>Découpe laser (bois, acrylique)</li>
-                        <li>Modélisation 3D (Fusion 360)</li>
-                        <li>Prototypage rapide</li>
-                    </ul>
-                </div>
-
-                <div class="skill-card">
-                    <h3>> DESIGN</h3>
-                    <ul>
-                        <li>UI/UX Design (Figma)</li>
-                        <li>Graphisme Print</li>
-                        <li>Identité visuelle</li>
-                    </ul>
+        <section id="timeline">
+            <h2>> PARCOURS</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span>2024 - 2025</span>
+                    <p>Formation ETT Bordeaux - Design Numérique</p>
                 </div>
             </div>
         </section>
 
         <section id="contact">
             <h2>> CONTACT</h2>
-            <div class="contact-info">
-                <h3>Disponible pour des opportunités :</h3>
-                <a href="mailto:aminabakacheva@gmail.com">
-                    <i class="fas fa-envelope"></i> aminabakacheva@gmail.com
-                </a>
-                <p style="margin-top: 2rem;">
-                    Actuellement en formation <strong>Explore Ton Talent</strong> à Bordeaux,<br>
-                    je suis ouverte aux collaborations et conseils professionnels.
-                </p>
+            <p>Tu peux me contacter via les liens ci-dessous :</p>
+            <div class="social-icons">
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="mailto:amina@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
         </section>
     </main>
-
     <footer>
-        <p>© 2024 aβX://404.dev - Portfolio étudiant | ETT Bordeaux</p>
+        <p>&copy; 2025 Amina Bakacheva. Tous droits réservés.</p>
     </footer>
-
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        // Effet hacker sur les titres
-        document.querySelectorAll('h1, h2, h3').forEach(title => {
-            const originalText = title.innerText;
-            title.dataset.text = originalText;
-            
-            title.addEventListener('mouseenter', function() {
-                let iterations = 0;
-                const interval = setInterval(() => {
-                    title.innerText = originalText.split("")
-                        .map((char, index) => {
-                            if(index < iterations) return originalText[index];
-                            return String.fromCharCode(Math.random() * 94 + 33);
-                        })
-                        .join("");
-                    
-                    if(iterations >= originalText.length) {
-                        clearInterval(interval);
-                        setTimeout(() => {
-                            title.innerText = originalText;
-                        }, 100);
-                    }
-                    iterations += 0.3;
-                }, 30);
-            });
-        });
-
-        // Animation au scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if(entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.project-card, .skill-card, .about-content').forEach(card => {
-            card.style.opacity = 0;
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)';
-            observer.observe(card);
-        });
-    </script>
 </body>
+
 </html>
