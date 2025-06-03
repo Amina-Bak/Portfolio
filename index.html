@@ -12,8 +12,10 @@
             --purple: #6a0dad;
             --bg: #0f0f0f;
             --dark: #1a1a1a;
+            --pink: #ff00ff;
         }
         
+        /* ▼▼▼ BASE ▼▼▼ */
         body {
             font-family: 'Rajdhani', sans-serif;
             background: var(--bg);
@@ -23,7 +25,33 @@
             line-height: 1.6;
         }
 
-        /* ========== NOUVELLE SECTION HERO ========== */
+        /* ▼▼▼ EFFET CIRCUITS IMPRIMÉS ▼▼▼ */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, 
+                    rgba(0, 255, 234, 0.05) 0%, 
+                    transparent 20%),
+                linear-gradient(to right, 
+                    rgba(106, 13, 173, 0.1) 1px, 
+                    transparent 1px),
+                linear-gradient(to bottom, 
+                    rgba(106, 13, 173, 0.1) 1px, 
+                    transparent 1px);
+            background-size: 
+                100% 100%,
+                20px 20px,
+                20px 20px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ▼▼▼ HERO SECTION ▼▼▼ */
         .hero {
             height: 100vh;
             display: flex;
@@ -74,6 +102,8 @@
             letter-spacing: 2px;
             transition: all 0.3s;
             font-weight: bold;
+            position: relative;
+            overflow: hidden;
         }
         
         .hero .btn:hover {
@@ -83,12 +113,24 @@
             transform: translateY(-3px);
         }
 
-        /* ========== ANCIEN PORTFOLIO ========== */
+        .btn::after {
+            content: "»";
+            position: absolute;
+            right: -20px;
+            transition: all 0.3s;
+        }
+
+        .btn:hover::after {
+            right: 10px;
+        }
+
+        /* ▼▼▼ HEADER ▼▼▼ */
         header {
             background-color: var(--dark);
             padding: 20px;
             text-align: center;
             border-bottom: 2px solid var(--neon);
+            position: relative;
         }
         
         h1.logo {
@@ -96,6 +138,49 @@
             font-size: 3em;
             margin: 0;
             color: var(--neon);
+            position: relative;
+            display: inline-block;
+            animation: glitch 5s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+
+        .logo::before, .logo::after {
+            content: "aβX://404.dev";
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.8;
+        }
+
+        .logo::before {
+            color: var(--pink);
+            z-index: -1;
+            animation: glitch-before 3s infinite;
+        }
+
+        .logo::after {
+            color: var(--neon);
+            z-index: -2;
+            animation: glitch-after 3s infinite;
+        }
+
+        @keyframes glitch-before {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-3px, 0); }
+            66% { transform: translate(3px, 0); }
+        }
+
+        @keyframes glitch-after {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(0, -3px); }
+            66% { transform: translate(0, 3px); }
         }
         
         nav {
@@ -111,6 +196,7 @@
             font-weight: bold;
             position: relative;
             font-family: 'Orbitron';
+            letter-spacing: 1px;
         }
         
         nav a::after {
@@ -129,6 +215,7 @@
             transform: scaleX(1);
         }
         
+        /* ▼▼▼ MAIN CONTENT ▼▼▼ */
         main {
             padding: 40px 20px;
             max-width: 1000px;
@@ -165,6 +252,7 @@
             50% { opacity: 1; }
         }
         
+        /* ▼▼▼ CARDS ▼▼▼ */
         .project-card, .skill-card, .timeline-item {
             background-color: var(--dark);
             padding: 20px;
@@ -172,50 +260,44 @@
             margin-bottom: 20px;
             border-radius: 10px;
             transition: all 0.3s;
+            position: relative;
+        }
+
+        .project-card::before {
+            content: "[ ]";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: var(--neon);
+            font-family: 'Orbitron';
         }
         
         .project-card:hover, .skill-card:hover, .timeline-item:hover {
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(0, 255, 234, 0.3);
         }
-        
-        footer {
-            background-color: var(--dark);
-            text-align: center;
-            padding: 20px;
-            border-top: 2px solid var(--neon);
-        }
-        
-        .social-icons a {
+
+        .project-link {
             color: var(--neon);
-            margin: 0 10px;
-            font-size: 1.5em;
+            text-decoration: none;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .project-link::after {
+            content: "→";
+            position: absolute;
+            right: -20px;
             transition: all 0.3s;
         }
-        
-        .social-icons a:hover {
-            color: #ff00ff;
-            transform: translateY(-3px);
+
+        .project-link:hover::after {
+            right: -15px;
         }
         
-        .scanline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                to bottom,
-                rgba(0, 255, 234, 0.05),
-                rgba(0, 255, 234, 0.05) 1px,
-                transparent 1px,
-                transparent 3px
-            );
-            pointer-events: none;
-            z-index: 999;
-        }
-        
-        /* ========== SECTION À PROPOS ========== */
+        /* ▼▼▼ À PROPOS ▼▼▼ */
         #a-propos .about-container {
             display: flex;
             align-items: center;
@@ -224,6 +306,7 @@
             padding: 30px;
             border-radius: 15px;
             border: 1px solid var(--neon);
+            box-shadow: 0 0 30px rgba(0, 255, 234, 0.1);
         }
         
         #a-propos .photo-container {
@@ -262,7 +345,52 @@
             to { transform: rotate(360deg); }
         }
         
-        /* ========== RESPONSIVE ========== */
+        /* ▼▼▼ FOOTER ▼▼▼ */
+        footer {
+            background-color: var(--dark);
+            text-align: center;
+            padding: 20px;
+            border-top: 2px solid var(--neon);
+        }
+        
+        .social-icons a {
+            color: var(--neon);
+            margin: 0 10px;
+            font-size: 1.5em;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--pink);
+            transform: translateY(-3px);
+            text-shadow: 0 0 10px var(--pink);
+        }
+        
+        /* ▼▼▼ SCANLINE EFFECT ▼▼▼ */
+        .scanline {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 255, 234, 0.05),
+                rgba(0, 255, 234, 0.05) 1px,
+                transparent 1px,
+                transparent 3px
+            );
+            pointer-events: none;
+            z-index: 999;
+            animation: scanline-anim 4s linear infinite;
+        }
+
+        @keyframes scanline-anim {
+            0% { transform: translateY(-100%); }
+            100% { transform: translateY(100%); }
+        }
+        
+        /* ▼▼▼ RESPONSIVE ▼▼▼ */
         @media (max-width: 768px) {
             #a-propos .about-container {
                 flex-direction: column;
@@ -278,13 +406,17 @@
                 height: auto;
                 min-height: 100vh;
             }
+
+            .logo {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="scanline"></div>
     
-    <!-- ========== NOUVELLE SECTION HERO ========== -->
+    <!-- ▼▼▼ HERO SECTION ▼▼▼ -->
     <section class="hero" id="accueil">
         <h1>Bonjour, je suis</h1>
         <strong>Amina Bakacheva</strong>
@@ -292,10 +424,10 @@
             Étudiante en développement web et design numérique à ETT Bordeaux.<br>
             Passionnée par l'innovation, le design cyberpunk et l'interaction entre technologie et esthétique.
         </p>
-        <a href="#projets" class="btn">Voir mes projets</a>
+        <a href="#projets" class="btn">Explorer mon portfolio</a>
     </section>
 
-    <!-- ========== ANCIEN PORTFOLIO ========== -->
+    <!-- ▼▼▼ MAIN CONTENT ▼▼▼ -->
     <header>
         <h1 class="logo">aβX://404.dev</h1>
         <nav>
@@ -330,21 +462,44 @@
         <section id="projets">
             <h2>> PROJETS</h2>
             <div class="project-card">
-                <h3>Nom du projet</h3>
-                <p>Description du projet avec les technologies utilisées.</p>
+                <h3>Site Portfolio Cyberpunk</h3>
+                <p>Création d'un portfolio interactif avec animations CSS et JavaScript. Design inspiré de l'univers cyberpunk.</p>
+                <a href="#" class="project-link">Détails du projet</a>
+            </div>
+            
+            <div class="project-card">
+                <h3>Application de Modélisation 3D</h3>
+                <p>Outil web pour créer des modèles 3D simples avec export STL pour impression 3D.</p>
+                <a href="#" class="project-link">Détails du projet</a>
             </div>
         </section>
 
         <section id="competences">
             <h2>> COMPÉTENCES</h2>
-            <div class="skill-card">HTML</div>
-            <div class="skill-card">CSS</div>
-            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">
+                <h3>Développement Web</h3>
+                <ul>
+                    <li>HTML5/CSS3</li>
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js</li>
+                    <li>Git/GitHub</li>
+                </ul>
+            </div>
+            
+            <div class="skill-card">
+                <h3>Design</h3>
+                <ul>
+                    <li>UI/UX Design</li>
+                    <li>Figma</li>
+                    <li>Illustrator</li>
+                    <li>Motion Design</li>
+                </ul>
+            </div>
         </section>
 
         <section id="contact">
             <h2>> CONTACT</h2>
-            <p>Tu peux me contacter via les liens ci-dessous :</p>
+            <p>Disponible pour des collaborations ou des conseils :</p>
             <div class="social-icons">
                 <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
@@ -354,11 +509,12 @@
     </main>
     
     <footer>
-        <p>&copy; 2025 aβX://404.dev - Portfolio d'Amina Bakacheva</p>
+        <p>&copy; 2025 aβX://404.dev - Tous droits réservés</p>
+        <p>Portfolio de Amina Bakacheva - Étudiante ETT Bordeaux</p>
     </footer>
 
     <script>
-        // Effet hacker sur les titres
+        // ▼▼▼ EFFET HACKER SUR LES TITRES ▼▼▼
         document.querySelectorAll('h1, h2, h3').forEach(title => {
             const originalText = title.innerText;
             title.dataset.text = originalText;
@@ -384,7 +540,7 @@
             });
         });
 
-        // Animation au scroll
+        // ▼▼▼ ANIMATION AU SCROLL ▼▼▼
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if(entry.isIntersecting) {
