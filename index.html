@@ -268,35 +268,9 @@
         #a-propos .photo-container {
             position: relative;
             min-width: 250px;
+            display: none; /* Photo supprimée */
         }
         
-        #a-propos .photo {
-            width: 100%;
-            border-radius: 50%;
-            border: 3px solid var(--neon);
-            box-shadow: 0 0 25px rgba(0, 255, 234, 0.4);
-            transition: transform 0.5s;
-            z-index: 2;
-            position: relative;
-        }
-        
-        #a-propos .photo:hover {
-            transform: scale(1.05);
-        }
-        
-        #a-propos .photo-container::before {
-            content: "";
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 2px dashed var(--neon);
-            border-radius: 50%;
-            animation: spin 15s linear infinite;
-            opacity: 0.7;
-        }
-
         /* ▼▼▼ SECTION LANGUES ▼▼▼ */
         .languages {
             margin-top: 25px;
@@ -564,9 +538,6 @@
         <section id="a-propos">
             <h2>> À_PROPOS</h2>
             <div class="about-container">
-                <div class="photo-container">
-                    <img src="amina.jpg" alt="Photo de Amina Bakacheva" class="photo">
-                </div>
                 <div class="texte">
                     <h3>Amina Bakacheva</h3>
                     <p>
@@ -625,10 +596,9 @@
             
             <div class="project-card">
                 <h3>Application de Modélisation 3D</h3>
-                <p>Outil web pour créer des modèles 3D simples avec export STL pour impression 3D.</p>
+                <p>Outil pour préparer et optimiser des modèles 3D pour impression, avec gestion des paramètres d'impression.</p>
                 <p class="tech-used">
-                    <span class="tech">Three.js</span>
-                    <span class="tech">Blender</span>
+                    <span class="tech">Cura</span>
                 </p>
                 <a href="#" class="project-link">Détails du projet</a>
             </div>
