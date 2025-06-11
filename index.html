@@ -427,6 +427,43 @@
             color: var(--pink);
             margin-top: 10px;
         }
+
+        /* ▼▼▼ MAQUETTE STYLES ▼▼▼ */
+        .maquette-overlay {
+            position: relative;
+            margin: 30px auto;
+            max-width: 800px;
+            border: 2px solid var(--neon);
+            box-shadow: 0 0 25px rgba(0, 255, 234, 0.4);
+        }
+
+        .maquette-overlay::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(106, 13, 173, 0.1) 0%, transparent 50%),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="1" fill="%2300ffea" opacity="0.2"/></svg>');
+            pointer-events: none;
+        }
+
+        .maquette-legend {
+            font-family: 'Orbitron';
+            color: var(--neon);
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            border-top: 1px solid var(--pink);
+        }
+
+        .maquette-legend h4 {
+            color: var(--pink);
+            margin-top: 0;
+            border-bottom: 1px dashed var(--neon);
+            padding-bottom: 5px;
+        }
         
         /* ▼▼▼ FOOTER ▼▼▼ */
         footer {
@@ -504,6 +541,10 @@
 
             #par-les-vivants-details .language-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .maquette-overlay {
+                margin: 15px 0;
             }
         }
     </style>
@@ -630,10 +671,16 @@
                     <li><strong>Validation technique</strong> : Vérification des contraintes de fabrication (découpe laser, impression 3D).</li>
                 </ul>
                 
-                <div class="mockup-container">
-                    <!-- Remplace "maquette-par-les-vivants.jpg" par ton image réelle -->
-                    <img src="maquette-par-les-vivants.jpg" alt="Maquette numérique du projet Par Les Vivants" class="mockup">
-                    <p class="caption">Extrait de la maquette finale (SVG optimisé pour découpe laser).</p>
+                <!-- ▼▼▼ NOUVELLE SECTION MAQUETTE ▼▼▼ -->
+                <div class="maquette-overlay">
+                    <img src="par-les-vivants-maquette.png" alt="Maquette complète du projet Par Les Vivants" style="width:100%; display:block;">
+                    <div class="maquette-legend">
+                        <h4>> LEGENDE_DU_PARCOURS</h4>
+                        <p>1. Collège Blanqui | 2. Place Stapislaine Barnbeche | 3. Chôtoien minable<br>
+                        4. La cité blanche | 5. Lettres du Docteur Schussi | 6. Comteille de Joseph Ernest<br>
+                        7. Roger Aila | 8. "Un Juize primaire kleiner" | 9. Camp de Métropole-Beaudébert<br>
+                        10. La baie sous-marine</p>
+                    </div>
                 </div>
 
                 <div class="languages" style="margin-top: 20px;">
